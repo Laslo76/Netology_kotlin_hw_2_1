@@ -1,10 +1,10 @@
 fun main() {
-    val tax_rate: Double = 0.75 // Ставка в %
-    val min_payment: Int = 3500 // минимальная комиссия
+    val taxRate: Double = 0.75 // Ставка в %
+    val minPayment: Int = 3500 // минимальная комиссия
 
-    val sum_transer: Int = 5000000 // сумма перевода в копейках
+    val sumTransfer: Int = 50000 // сумма перевода в копейках
 
-    var sum_tax: Int = (sum_transer * tax_rate / 100).toInt()
-    sum_tax = if (sum_tax < min_payment) min_payment else sum_tax
-    println(sum_tax) 
+    var result: Int = (sumTransfer * taxRate / 100).toInt()
+    result = if (result < minPayment) minPayment else result
+    println("Сумма комиссии за перевод: $result копеек")
 }
