@@ -6,8 +6,8 @@ fun main() {
 
     val amount = 4700 // сумма перевода в рублях
 
-    val PreliminaryСommission = (amount * taxRate / 100)
-    val commission = if (minPayment > PreliminaryСommission) minPayment else PreliminaryСommission.roundToInt()
+    val preliminaryCommission = (amount * taxRate / 100)
+    val commission = if (minPayment > preliminaryCommission) minPayment else preliminaryCommission.roundToInt()
 
     //val commission = listOf((amount * taxRate / 100), minPayment).max().roundToInt()
 
