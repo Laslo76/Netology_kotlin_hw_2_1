@@ -1,10 +1,15 @@
+import kotlin.math.roundToInt
+
 fun main() {
-    val taxRate: Double = 0.75 // Ставка в %
-    val minPayment: Int = 35 // минимальная комиссия
+    val taxRate = 0.75 // Ставка в %
+    val minPayment = 35 // минимальная комиссия
 
-    val amount: Int = 500 // сумма перевода в рублях
+    val amount = 4700 // сумма перевода в рублях
 
-    val commission: Int = (amount * taxRate / 100).toInt()
+    val PreliminaryСommission = (amount * taxRate / 100)
+    val commission = if (minPayment > PreliminaryСommission) minPayment else PreliminaryСommission.roundToInt()
 
-    println("Сумма комиссии за перевод: ${if (commission < minPayment) minPayment else commission} руб.")
+    //val commission = listOf((amount * taxRate / 100), minPayment).max().roundToInt()
+
+    println("Сумма комиссии за перевод: $commission руб.")
 }
